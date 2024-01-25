@@ -94,8 +94,8 @@ class DB
             $sql .= "where `id`='{$array['id']}'";
         } else {
             $sql = "insert into `$this->table`";
-            $cols = "(`" . join("`,`" . array_keys($array)) . "`)";
-            $vals = "('" . join("','" . $array) . "')";
+            $cols = "(`" . join("`,`" , array_keys($array)) . "`)";
+            $vals = "('" . join("','" , $array) . "')";
             $sql = $sql . $cols . "values" . $vals;
         }
         return $this->pdo->exec($sql);
