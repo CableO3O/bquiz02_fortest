@@ -7,7 +7,7 @@
     <input type="text" name="pw" id="pw">
     <br>
     <button onclick="login()">登入</button>
-    <button>清除</button>
+    <button onclick="clearinput()">清除</button>
     <a href="?do=forget">忘記密碼</a>
     <a href="?do=reg">尚未註冊</a>
 </fieldset>
@@ -36,5 +36,9 @@
                 })
             }
         })
+    }
+    function clearinput() {
+        $("#acc").val("")
+        $("#pw").val("")
     }
 </script>
