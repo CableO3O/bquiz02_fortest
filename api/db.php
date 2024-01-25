@@ -102,12 +102,12 @@ class DB
     }
     function del($id)
     {
-        $sql = "delete * from `$this->table` where";
+        $sql = "delete from `$this->table` where ";
         if (is_array($id)) {
             $tmp = $this->a2s($id);
-            $sql .= join("&&", $tmp);
+            $sql .= join(" && ", $tmp);
         } else if (is_numeric($id)) {
-            $sql .= "`id`='$id'";
+            $sql .= " `id`='$id'";
         }
         return $this->pdo->exec($sql);
     }

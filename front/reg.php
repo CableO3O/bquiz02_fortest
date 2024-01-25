@@ -49,5 +49,7 @@
     function clearinput() {
         $("#acc").val("")
         $("#pw").val("")
+        $("#pw2").val("")
+        $("#email").val("")
     }
 </script>
