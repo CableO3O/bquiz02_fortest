@@ -1,7 +1,7 @@
 <fieldset style="">
     <legend>目前位置:首頁>最新文章區</legend>
     <div class="container">
-        <div class="title" style="display: flex;width:80%">
+        <div style="display: flex;width:80%">
             <div style="width: 30%;text-align:center">標題</div>
             <div style="width: 50%;text-align:center">內容</div>
             <div style="width: 20%;text-align:center"></div>
@@ -15,8 +15,8 @@
         $news = $News->all(['sh' => 1], "limit $start,$div");
         foreach ($news as $new) {
         ?>
-            <div class="news" style="display: flex;width:80%;align-items: center;">
-                <div style="width: 30%;background-color:lightgray"><?= $new['title']; ?></div>
+            <div style="display: flex;width:80%;align-items: center;">
+                <div class="title" data-id="<?= $new['id']; ?>" style="width: 30%;background-color:lightgray" ><?= $new['title']; ?></div>
                 <div id="a<?= $new['id']; ?>" style="width: 50%"><?= mb_substr($new['news'], 0, 17); ?>...</div>
                 <div id="s<?= $new['id']; ?>" style="width: 50%;display:none"><?= $new['news']; ?></div>
                 <?php
@@ -57,6 +57,12 @@
     </div>
 </fieldset>
 <script>
+    $('.title').on('click',(e)=>{
+        let id=$(e.target).data('id');
+        $("#s"+id).toggle();
+        $("#a"+id).toggle();
+    })
+
     function good(id) {
         $.post("./api/good.php",{id}, () => {
             location.reload()
