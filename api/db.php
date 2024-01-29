@@ -127,6 +127,7 @@ $Total=new DB('total');
 $User=new DB('user');
 $News=new DB('news');
 $Log=new DB('log');
+$Que=new DB('que');
 if (!isset($_SESSION['visited'])) {
     if ($Total->count(['date' => date('Y-m-d')]) > 0) {
         $total = $Total->find(['date' => date('Y-m-d')]);
