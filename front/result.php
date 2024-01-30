@@ -14,7 +14,7 @@ $opts = $Que->all(['subject_id' => $_GET['id']]);
     ?>
         <div class="container" style="display: flex;margin-bottom:20px">
             <div style="width: 50%;">
-                <?= $key + 1; ?>.<?= $opt['text']; ?>
+                <?= $opt['text']; ?>
             </div>
             <div style="width:<?=$width;?>%;height:20px;background-color:#ccc"></div>
             <div style="width: 15%;"><?= $opt['vote']; ?>票(<?=$all;?>%)</div>
