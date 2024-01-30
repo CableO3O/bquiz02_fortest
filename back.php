@@ -25,7 +25,7 @@
 		</div>
 		<div id="title2">
 			<a href="index.php">
-				<img src="./icon/02B01.jpg" alt="">
+				<img src="./icon/banner.jpg" alt="">
 			</a>
 		</div>
 		<div id="mm">
