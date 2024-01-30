@@ -20,7 +20,7 @@
             <div style="width: 15%;text-align:center;">
         <?php
 if (isset($_SESSION['user'])) {
-    echo "<a href=''>參與投票</a>";
+    echo "<a href='./index.php?do=vote&&id={$que['id']}'>參與投票</a>";
 }else{
     echo "請先登入";
 }
